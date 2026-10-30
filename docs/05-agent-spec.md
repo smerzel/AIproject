@@ -1,6 +1,8 @@
-# 05 — מפרט סוכן הערכת מועמד
+# 05 — איך הסוכן נותן ציון
 
-## תשתית
+הסוכן רץ בתהליך נפרד מהאתר. יש לו מנהל ושני עוזרים: אחד קורא את קורות החיים, והשני מחפש באינטרנט. הציון מגיע מהכלים. המודל לא ממציא מספר משלו.
+
+## במה הוא משתמש
 
 - **LangChain Deep Agents**: `deepagents.create_deep_agent(model, tools=[], system_prompt, subagents=[...])` ב-`agent/deep_agent.py`.
 - הכלים `extract_resume_profile` ו-`evaluate_requirement_coverage` נקראים **רק** דרך MCP stdio (`python -m mcp_studio`).
@@ -54,7 +56,7 @@ Ollama מותקן על Windows (לא בתוך Docker), וה-worker מגיע אל
    - כישלון Tavily נרשם בפערים, והמשקל מחולק מחדש בין הרכיבים הקיימים.
 6. `ApplicationScreeningCompleted` עם הדוח המלא.
 7. כישלון: `ApplicationScreeningFailed`. אחרי 3 כישלונות הסטטוס `ScreeningFailed` ו-HR רואה את השגיאה.
-8. הערכה חוזרת (F10): `ApplicationRescreenRequested` מחזיר לתור ומאפס את מונה הכישלונות.
+8. הערכה חוזרת: האירוע `ApplicationRescreenRequested` מחזיר את המועמדות לתור ומאפס את מונה הכישלונות.
 
 ## פורמט הדוח
 

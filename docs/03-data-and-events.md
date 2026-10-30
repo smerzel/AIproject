@@ -1,6 +1,10 @@
-# 03 — נתונים ואירועים
+# 03 — מה נשמר
 
-## Event Store (מקור האמת)
+כל שינוי נשמר כשורה בטבלת האירועים. השורה לא נערכת ולא נמחקת. המסכים לא קוראים מהטבלה הזאת. הם קוראים מטבלאות שנבנות ממנה: משתמשים, משרות ומועמדויות.
+
+השם באנגלית בטבלאות למטה הוא השם שנשמר במסד. המשפט לידו אומר מה קורה במערכת.
+
+## טבלת האירועים
 
 טבלה `events`:
 
@@ -17,7 +21,7 @@
 
 אין עדכון ואין מחיקה של שורות אירוע.
 
-## פרויקציות (Query)
+## הטבלאות שהמסכים קוראים
 
 - `users` — id, email, password_hash, full_name, role, auth_provider (`password` או `google`; אירוע ישן בלי השדה נחשב `password`)
 - `jobs` — id, title, description, must_have_skills, nice_to_have_skills, min_years, location, status, created_by, applicant_count, opened_at
@@ -26,7 +30,7 @@
 
 ## קטלוג אירועים
 
-| אירוע | אגרגט | תוצאת פרויקציה |
+| אירוע | על מה | מה משתנה במסך |
 |---|---|---|
 | UserRegistered | User | שורת user. ה-payload כולל `role` ו-`auth_provider`. משתמש Google מקבל hash של סיסמה אקראית, כך שטופס הסיסמה לא פותח אותו |
 | JobDrafted | Job | משרה Draft |

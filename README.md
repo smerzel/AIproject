@@ -127,17 +127,15 @@ Somee מארח **SQL Server בלבד**; Flask וה-worker רצים ב-Docker ו�
 
 | קובץ | תוכן |
 |---|---|
-| [docs/00-vision.md](docs/00-vision.md) | חזון |
-| [docs/01-requirements.md](docs/01-requirements.md) | FR/NFR וסטטוס |
-| [docs/02-architecture.md](docs/02-architecture.md) | MVC + CQRS + תהליכים |
-| [docs/03-data-and-events.md](docs/03-data-and-events.md) | Event Store ופרויקציות |
-| [docs/04-features.md](docs/04-features.md) | F1–F11 |
-| [docs/05-agent-spec.md](docs/05-agent-spec.md) | Deep Agent |
-| [docs/06-testing.md](docs/06-testing.md) | בדיקות |
-| [docs/07-traceability.md](docs/07-traceability.md) | דרישה → קוד → בדיקה |
-| [docs/08-decisions.md](docs/08-decisions.md) | החלטות טכניות: אפשרויות, בחירה, נימוק |
-| [docs/09-demo.md](docs/09-demo.md) | תסריט הדגמה |
-| [docs/10-oral.md](docs/10-oral.md) | מיפוי מושגי המצגות לקבצים |
+| [docs/00-vision.md](docs/00-vision.md) | מהי המערכת |
+| [docs/01-requirements.md](docs/01-requirements.md) | מה הקורס ביקש ומה קיים |
+| [docs/02-architecture.md](docs/02-architecture.md) | איך החלקים מחוברים |
+| [docs/03-data-and-events.md](docs/03-data-and-events.md) | מה נשמר |
+| [docs/04-features.md](docs/04-features.md) | אפיון פונקציונלי |
+| [docs/05-agent-spec.md](docs/05-agent-spec.md) | איך הסוכן נותן ציון |
+| [docs/06-testing.md](docs/06-testing.md) | מה נבדק |
+| [docs/07-traceability.md](docs/07-traceability.md) | איפה כל דרישה יושבת בקוד |
+| [docs/08-decisions.md](docs/08-decisions.md) | למה נבחר כל פתרון |
 
 Skill מ-skills.sh: `.agents/skills/flask-python`. Skills מקומיים: `.cursor/skills/`. Rule: `.cursor/rules/sdad.mdc`.
 

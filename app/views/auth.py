@@ -110,6 +110,9 @@ def google_callback():
         )
     except ValueError as exc:
         flash(str(exc), "warning")
+        # New staff Google users must pick a role; send them to the page that shows both buttons.
+        if door == "staff" and "תפקיד" in str(exc):
+            return redirect(url_for("auth.recruit_login"))
         return redirect(fallback)
     _start_session(user_id)
     return redirect(url_for("main.index"))

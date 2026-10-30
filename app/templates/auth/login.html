@@ -21,10 +21,24 @@
     </form>
     {% if google_enabled %}
     <div class="auth-divider"><span>או</span></div>
+    {% if staff %}
+    <p class="muted small mb-2">חשבון Google חדש: בחרי תפקיד. חשבון קיים נכנס אוטומטית לפי התפקיד שכבר נרשם.</p>
+    <div class="google-roles">
+      <a class="btn btn-google" href="{{ url_for('auth.google_start', door='staff', role='hr') }}">
+        {% include "auth/_google_mark.html" %}
+        Google כמגייסת
+      </a>
+      <a class="btn btn-google" href="{{ url_for('auth.google_start', door='staff', role='hiring_manager') }}">
+        {% include "auth/_google_mark.html" %}
+        Google כמנהל גיוס
+      </a>
+    </div>
+    {% else %}
     <a class="btn btn-google w-100" href="{{ url_for('auth.google_start', door=door) }}">
       {% include "auth/_google_mark.html" %}
       כניסה עם Google
     </a>
+    {% endif %}
     {% endif %}
     {% if staff %}
     <p class="auth-switch">צוות חדש? <a href="{{ url_for('auth.recruit_register') }}">פתיחת חשבון מגייס</a></p>

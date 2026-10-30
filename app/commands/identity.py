@@ -59,7 +59,10 @@ def sign_in_with_google(email: str, full_name: str, email_verified: bool, door: 
         return existing["id"]
     if door == "staff":
         if staff_role not in STAFF_ROLES:
-            raise ValueError("יש לבחור תפקיד בצוות הגיוס")
+            raise ValueError(
+                "לחשבון Google חדש בצוות הגיוס יש לבחור: Google כמגייסת או Google כמנהל גיוס. "
+                "אם את מועמדת — היכנסי מדלת המועמדים."
+            )
         role = staff_role
     else:
         role = "candidate"

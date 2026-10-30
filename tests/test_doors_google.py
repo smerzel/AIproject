@@ -108,7 +108,9 @@ def test_google_staff_without_role_is_sent_back(google_app):
     client = google_app.test_client()
     client.get("/auth/google?door=staff&role=admin")
     page = client.get("/auth/google/callback", follow_redirects=True)
-    assert "יש לבחור תפקיד" in page.get_data(as_text=True)
+    html = page.get_data(as_text=True)
+    assert "יש לבחור" in html and "מגייסת" in html
+    assert "Google כמגייסת" in html and "Google כמנהל גיוס" in html
 
 
 def test_google_signs_in_existing_account_but_keeps_doors(google_app):
